@@ -1,296 +1,434 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>شركة ابتكار الخامسة المحدودة</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --primary:#0D2F3F;
+  --gold:#D4AF37;
+  --silver:#C0C0C0;
+  --teal:#0FA3A3;
+  --dark:#050607;
+  --dark-gray:#2A2F36;
+  --light:#F2F2F7;
+}
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Cairo',sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cairo',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-background:#0D2F3F;
-color:white;
-line-height:1.8;
+  background:var(--dark);
+  color:#fff;
+  line-height:1.9;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-background:
-linear-gradient(rgba(13,47,63,.75),rgba(13,47,63,.9)),
-url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1920');
-background-size:cover;
-background-position:center;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.88), rgba(13,47,63,.70), rgba(0,0,0,.72)),
+    url('https://images.unsplash.com/photo-1599899568588-2577a83e40b3?q=80&w=1920&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,.28), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(15,163,163,.20), transparent 35%);
 }
 
 .hero-content{
-max-width:900px;
+  position:relative;
+  z-index:2;
+  max-width:1050px;
 }
 
-.logo{
-font-size:18px;
-color:#D4AF37;
-letter-spacing:3px;
-margin-bottom:20px;
+.badge{
+  display:inline-block;
+  color:var(--gold);
+  border:1px solid rgba(212,175,55,.5);
+  padding:9px 22px;
+  border-radius:50px;
+  margin-bottom:28px;
+  letter-spacing:2px;
+  font-weight:700;
+  background:rgba(0,0,0,.35);
 }
 
 .hero h1{
-font-size:60px;
-font-weight:800;
-margin-bottom:20px;
+  font-size:64px;
+  font-weight:900;
+  margin-bottom:16px;
+  color:#fff;
+}
+
+.hero h2{
+  font-size:25px;
+  color:var(--gold);
+  margin-bottom:24px;
+  font-weight:800;
 }
 
 .hero p{
-font-size:24px;
-color:#d9d9d9;
-margin-bottom:35px;
+  font-size:22px;
+  max-width:850px;
+  margin:0 auto 36px;
+  color:#e8e8e8;
+}
+
+.buttons{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:15px 35px;
-background:#D4AF37;
-color:#0D2F3F;
-text-decoration:none;
-font-weight:700;
-border-radius:50px;
-transition:.3s;
+  padding:15px 34px;
+  border-radius:50px;
+  font-weight:800;
+  transition:.3s ease;
+  border:1px solid var(--gold);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#050607;
+  box-shadow:0 12px 35px rgba(212,175,55,.25);
+}
+
+.btn-black{
+  background:#050607;
+  color:var(--gold);
 }
 
 .btn:hover{
-transform:translateY(-3px);
+  transform:translateY(-4px);
+  box-shadow:0 18px 45px rgba(212,175,55,.25);
 }
 
 section{
-padding:90px 8%;
+  padding:95px 8%;
 }
 
 .section-title{
-font-size:42px;
-margin-bottom:25px;
-color:#D4AF37;
-text-align:center;
+  text-align:center;
+  font-size:42px;
+  color:var(--gold);
+  margin-bottom:18px;
+  font-weight:900;
 }
 
-.about{
-text-align:center;
-max-width:1000px;
-margin:auto;
+.section-subtitle{
+  text-align:center;
+  color:#cfcfcf;
+  max-width:800px;
+  margin:0 auto 55px;
+  font-size:18px;
+}
+
+.about-box{
+  max-width:1050px;
+  margin:auto;
+  background:linear-gradient(135deg, rgba(13,47,63,.96), rgba(5,6,7,.95));
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:28px;
+  padding:42px;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.about-box p{
+  font-size:21px;
+  color:#f4f4f4;
 }
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
 }
 
 .card{
-background:#163f53;
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(212,175,55,.25);
+  background:linear-gradient(180deg, #0D2F3F, #071b25);
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:26px;
+  padding:34px;
+  min-height:230px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold);
+}
+
+.card span{
+  color:var(--gold);
+  font-size:34px;
+  display:block;
+  margin-bottom:15px;
 }
 
 .card h3{
-color:#D4AF37;
-margin-bottom:15px;
+  color:var(--gold);
+  font-size:24px;
+  margin-bottom:14px;
+}
+
+.card p{
+  color:#e6e6e6;
+  font-size:17px;
+}
+
+.dark-section{
+  background:#050607;
 }
 
 .values{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-margin-top:30px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:16px;
+  max-width:950px;
+  margin:auto;
 }
 
 .value{
-background:#0FA3A3;
-padding:12px 22px;
-border-radius:50px;
-font-weight:700;
+  padding:14px 26px;
+  border-radius:50px;
+  background:#050607;
+  color:var(--gold);
+  border:1px solid rgba(212,175,55,.65);
+  font-weight:800;
+}
+
+.personality{
+  background:linear-gradient(135deg, #061923, #0D2F3F);
 }
 
 .contact{
-text-align:center;
-background:#082230;
+  background:
+    linear-gradient(rgba(5,6,7,.92), rgba(13,47,63,.96));
+  text-align:center;
 }
 
-.contact p{
-font-size:20px;
-margin:10px 0;
+.contact-box{
+  max-width:850px;
+  margin:auto;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:28px;
+  padding:45px;
+  background:rgba(0,0,0,.35);
 }
 
-footer{
-padding:25px;
-text-align:center;
-background:#05161f;
-color:#bbb;
+.contact-box p{
+  font-size:22px;
+  margin:12px 0;
+}
+
+.footer{
+  background:#020304;
+  text-align:center;
+  padding:28px 20px;
+  color:#aaa;
+  border-top:1px solid rgba(212,175,55,.18);
 }
 
 @media(max-width:768px){
+  .hero h1{
+    font-size:38px;
+  }
 
-.hero h1{
-font-size:38px;
+  .hero h2{
+    font-size:20px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .section-title{
+    font-size:31px;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+
+  .about-box{
+    padding:28px;
+  }
 }
-
-.hero p{
-font-size:18px;
-}
-
-.section-title{
-font-size:30px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<header class="hero">
+  <div class="hero-content">
+    <div class="badge">IBTIKAR ALKHAMSA COMPANY LIMITED</div>
 
-<div class="hero-content">
+    <h1>شركة ابتكار الخامسة المحدودة</h1>
 
-<div class="logo">
-IBTIKAR ALKHAMSA
-</div>
+    <h2>نحن لا نبني منصات عرض فقط... نحن نصنع حضورًا</h2>
 
-<h1>شركة ابتكار الخامسة المحدودة</h1>
+    <p>
+      شريكك المتخصص في تصميم وتنفيذ وإدارة المعارض والمؤتمرات والفعاليات
+      وحلول الدعاية والإعلان والتجهيزات البصرية والتقنية.
+    </p>
 
-<p>
-نحن لا نبني منصات عرض فقط... نحن نصنع حضورًا
-</p>
-
-<a href="#about" class="btn">
-اكتشف المزيد
-</a>
-
-</div>
-
-</section>
+    <div class="buttons">
+      <a href="#services" class="btn btn-gold">استعرض خدماتنا</a>
+      <a href="#contact" class="btn btn-black">تواصل معنا</a>
+    </div>
+  </div>
+</header>
 
 <section id="about">
+  <h2 class="section-title">من نحن</h2>
+  <p class="section-subtitle">نقدّم حلولاً متكاملة تبدأ من الفكرة وحتى التنفيذ النهائي.</p>
 
-<h2 class="section-title">
-من نحن
-</h2>
-
-<div class="about">
-
-<p>
-شركة متخصصة في تصميم وتنفيذ وإدارة المعارض والمؤتمرات والفعاليات والمناسبات باحترافية تعكس هوية عملائنا وتحقق أهدافهم.
-</p>
-
-</div>
-
+  <div class="about-box">
+    <p>
+      شركة متخصصة في تصميم وتنفيذ وإدارة المعارض والمؤتمرات والفعاليات،
+      وحلول الدعاية والإعلان والتجهيزات البصرية والتقنية، نقدم خدمات متكاملة
+      تبدأ من الفكرة وحتى التنفيذ النهائي بأعلى درجات الاحترافية.
+    </p>
+  </div>
 </section>
 
-<section>
+<section class="dark-section">
+  <h2 class="section-title">رؤيتنا ورسالتنا</h2>
+  <p class="section-subtitle">نصنع تجارب بصرية وفعاليات استثنائية تترك أثرًا دائمًا.</p>
 
-<h2 class="section-title">
-رؤيتنا ورسالتنا
-</h2>
+  <div class="cards">
+    <div class="card">
+      <span>01</span>
+      <h3>رؤيتنا</h3>
+      <p>
+        أن نكون الشريك الأول في صناعة وتنفيذ التجارب البصرية والفعاليات الاستثنائية
+        التي تترك أثراً دائماً، وتمنح عملاءنا حضوراً مميزاً وتجربة لا تُنسى.
+      </p>
+    </div>
 
-<div class="cards">
-
-<div class="card">
-<h3>رؤيتنا</h3>
-<p>
-أن نكون الخيار الأول في تنظيم وتنفيذ المعارض والمؤتمرات والفعاليات عبر تجارب استثنائية تترك أثرًا مستدامًا.
-</p>
-</div>
-
-<div class="card">
-<h3>رسالتنا</h3>
-<p>
-إعادة تعريف مفهوم تنظيم المعارض والمؤتمرات من خلال حلول إبداعية وتنفيذ احترافي يحقق أعلى مستويات الجودة والتميز.
-</p>
-</div>
-
-</div>
-
+    <div class="card">
+      <span>02</span>
+      <h3>رسالتنا</h3>
+      <p>
+        إعادة تعريف مفهوم المعارض والمؤتمرات والفعاليات من خلال حلول إبداعية متكاملة
+        تجمع بين التصميم الاحترافي، والإدارة الدقيقة، والتنفيذ المتقن، بما يعزز من قيمة
+        العلامات التجارية في الأسواق المحلية.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section>
+<section id="services">
+  <h2 class="section-title">خدماتنا</h2>
+  <p class="section-subtitle">حلول احترافية للمعارض، الفعاليات، والتجهيزات البصرية.</p>
 
-<h2 class="section-title">
-خدماتنا
-</h2>
+  <div class="cards">
+    <div class="card">
+      <span>✦</span>
+      <h3>تصميم وتنفيذ المعارض</h3>
+      <p>
+        تصميم وتنفيذ منصات وأجنحة معارض تعكس هوية العلامة التجارية وتمنحها حضوراً لافتاً.
+      </p>
+    </div>
 
-<div class="cards">
+    <div class="card">
+      <span>✦</span>
+      <h3>تنظيم وإدارة الفعاليات</h3>
+      <p>
+        تخطيط وإدارة الفعاليات والمؤتمرات والمناسبات من الفكرة وحتى التنفيذ باحترافية عالية.
+      </p>
+    </div>
 
-<div class="card">
-<h3>تصميم وتنفيذ المعارض</h3>
-<p>تصميم أجنحة ومعارض احترافية تعكس هوية العلامة التجارية.</p>
-</div>
-
-<div class="card">
-<h3>تنظيم المؤتمرات</h3>
-<p>إدارة وتنظيم المؤتمرات والمنتديات والملتقيات المتخصصة.</p>
-</div>
-
-<div class="card">
-<h3>الفعاليات والمناسبات</h3>
-<p>تنفيذ الفعاليات وإطلاق المنتجات والمناسبات الخاصة.</p>
-</div>
-
-</div>
-
+    <div class="card">
+      <span>✦</span>
+      <h3>حلول الدعاية والإعلان والتجهيزات البصرية</h3>
+      <p>
+        حلول بصرية وتقنية وإعلانية متكاملة تدعم ظهور العلامة التجارية بأفضل صورة.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section>
+<section class="dark-section">
+  <h2 class="section-title">قيمنا</h2>
+  <p class="section-subtitle">القيم التي تقود طريقة عملنا في كل مشروع.</p>
 
-<h2 class="section-title">
-قيمنا
-</h2>
-
-<div class="values">
-
-<div class="value">الابتكار</div>
-<div class="value">الجودة</div>
-<div class="value">الاحترافية</div>
-<div class="value">الالتزام</div>
-<div class="value">الشراكة</div>
-<div class="value">التركيز على العميل</div>
-
-</div>
-
+  <div class="values">
+    <div class="value">الابتكار</div>
+    <div class="value">الجودة</div>
+    <div class="value">الاحترافية</div>
+    <div class="value">الالتزام</div>
+    <div class="value">الشراكة</div>
+    <div class="value">التركيز على العميل</div>
+  </div>
 </section>
 
-<section class="contact">
+<section class="personality">
+  <h2 class="section-title">شخصيتنا</h2>
+  <p class="section-subtitle">الطابع الذي يميز حضور ابتكار الخامسة في السوق.</p>
 
-<h2 class="section-title">
-تواصل معنا
-</h2>
-
-<p>الرياض - المملكة العربية السعودية</p>
-<p>info@ibtikaralkhamsa.sa</p>
-<p>+966 XX XXX XXXX</p>
-
+  <div class="values">
+    <div class="value">مبتكرة</div>
+    <div class="value">احترافية</div>
+    <div class="value">موثوقة</div>
+    <div class="value">طموحة</div>
+    <div class="value">دقيقة</div>
+  </div>
 </section>
 
-<footer>
+<section id="contact" class="contact">
+  <h2 class="section-title">تواصل معنا</h2>
 
-© 2026 Ibtikar Alkhamsa Company Limited
+  <div class="contact-box">
+    <p>الرياض - المملكة العربية السعودية</p>
+    <p>info@IbtikarAlkhamsa.sa</p>
+    <p>www.IbtikarAlkhamsa.sa</p>
 
+    <br>
+
+    <div class="buttons">
+      <a href="mailto:info@IbtikarAlkhamsa.sa" class="btn btn-gold">راسلنا الآن</a>
+      <a href="#about" class="btn btn-black">تعرف علينا</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2026 Ibtikar Alkhamsa Company Limited — All Rights Reserved
 </footer>
 
 </body>
