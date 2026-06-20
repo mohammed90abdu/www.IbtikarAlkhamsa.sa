@@ -1,11 +1,297 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
-<title>ابتكار الخامسة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>شركة ابتكار الخامسة المحدودة</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+background:#0D2F3F;
+color:white;
+line-height:1.8;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(13,47,63,.75),rgba(13,47,63,.9)),
+url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1920');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.logo{
+font-size:18px;
+color:#D4AF37;
+letter-spacing:3px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:24px;
+color:#d9d9d9;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#D4AF37;
+color:#0D2F3F;
+text-decoration:none;
+font-weight:700;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+font-size:42px;
+margin-bottom:25px;
+color:#D4AF37;
+text-align:center;
+}
+
+.about{
+text-align:center;
+max-width:1000px;
+margin:auto;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.card{
+background:#163f53;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,.25);
+}
+
+.card h3{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.values{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:30px;
+}
+
+.value{
+background:#0FA3A3;
+padding:12px 22px;
+border-radius:50px;
+font-weight:700;
+}
+
+.contact{
+text-align:center;
+background:#082230;
+}
+
+.contact p{
+font-size:20px;
+margin:10px 0;
+}
+
+footer{
+padding:25px;
+text-align:center;
+background:#05161f;
+color:#bbb;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title{
+font-size:30px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="logo">
+IBTIKAR ALKHAMSA
+</div>
+
 <h1>شركة ابتكار الخامسة المحدودة</h1>
-<p>نحن لا نبني منصات عرض فقط... نحن نصنع حضورًا</p>
+
+<p>
+نحن لا نبني منصات عرض فقط... نحن نصنع حضورًا
+</p>
+
+<a href="#about" class="btn">
+اكتشف المزيد
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">
+من نحن
+</h2>
+
+<div class="about">
+
+<p>
+شركة متخصصة في تصميم وتنفيذ وإدارة المعارض والمؤتمرات والفعاليات والمناسبات باحترافية تعكس هوية عملائنا وتحقق أهدافهم.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+رؤيتنا ورسالتنا
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>رؤيتنا</h3>
+<p>
+أن نكون الخيار الأول في تنظيم وتنفيذ المعارض والمؤتمرات والفعاليات عبر تجارب استثنائية تترك أثرًا مستدامًا.
+</p>
+</div>
+
+<div class="card">
+<h3>رسالتنا</h3>
+<p>
+إعادة تعريف مفهوم تنظيم المعارض والمؤتمرات من خلال حلول إبداعية وتنفيذ احترافي يحقق أعلى مستويات الجودة والتميز.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+خدماتنا
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>تصميم وتنفيذ المعارض</h3>
+<p>تصميم أجنحة ومعارض احترافية تعكس هوية العلامة التجارية.</p>
+</div>
+
+<div class="card">
+<h3>تنظيم المؤتمرات</h3>
+<p>إدارة وتنظيم المؤتمرات والمنتديات والملتقيات المتخصصة.</p>
+</div>
+
+<div class="card">
+<h3>الفعاليات والمناسبات</h3>
+<p>تنفيذ الفعاليات وإطلاق المنتجات والمناسبات الخاصة.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+قيمنا
+</h2>
+
+<div class="values">
+
+<div class="value">الابتكار</div>
+<div class="value">الجودة</div>
+<div class="value">الاحترافية</div>
+<div class="value">الالتزام</div>
+<div class="value">الشراكة</div>
+<div class="value">التركيز على العميل</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2 class="section-title">
+تواصل معنا
+</h2>
+
+<p>الرياض - المملكة العربية السعودية</p>
+<p>info@ibtikaralkhamsa.sa</p>
+<p>+966 XX XXX XXXX</p>
+
+</section>
+
+<footer>
+
+© 2026 Ibtikar Alkhamsa Company Limited
+
+</footer>
+
 </body>
 </html>
